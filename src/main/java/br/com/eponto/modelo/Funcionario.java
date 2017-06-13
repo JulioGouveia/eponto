@@ -1,5 +1,8 @@
 package br.com.eponto.modelo;
 
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,9 +11,12 @@ public class Funcionario {
 
 	@Id
 	private Integer idFunc;
-	
+
 	private String nomeFunc;
 	private String cpfFunc;
+
+	@ElementCollection
+	private List<HoraAtual> horaAtual;
 
 	public Integer getIdFunc() {
 		return idFunc;
@@ -34,6 +40,20 @@ public class Funcionario {
 
 	public void setCpfFunc(String cpfFunc) {
 		this.cpfFunc = cpfFunc;
+	}
+
+	public List<HoraAtual> getHoraAtual() {
+		return horaAtual;
+	}
+
+	public void setHoraAtual(List<HoraAtual> horaAtual) {
+		this.horaAtual = horaAtual;
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [idFunc=" + idFunc + ", nomeFunc=" + nomeFunc + ", cpfFunc=" + cpfFunc + ", horaAtual="
+				+ horaAtual + "]";
 	}
 
 }

@@ -10,9 +10,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.eponto.controller.HomeController;
+import br.com.eponto.modelo.Funcionario;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {HomeController.class})
+@ComponentScan(basePackageClasses = {HomeController.class, Funcionario.class,})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 	
 	@Bean
